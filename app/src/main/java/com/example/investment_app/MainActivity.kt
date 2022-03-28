@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }
+        bindingClass.buttonSimulator.setOnClickListener {
+            val intent = Intent(this, SimulatorActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }

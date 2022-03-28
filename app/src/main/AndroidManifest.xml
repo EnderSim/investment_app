@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Investment_app">
         <activity
+            android:name=".SimulatorActivity"
+            android:exported="false" />
+        <activity
             android:name=".PortfolioActivity"
             android:exported="false" />
         <activity
@@ -29,6 +32,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
