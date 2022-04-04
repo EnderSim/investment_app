@@ -23,7 +23,6 @@ android {
         python {
             pip {
                 install "yfinance"
-                install "matplotlib"
             }
         }
     }

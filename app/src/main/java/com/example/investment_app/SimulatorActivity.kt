@@ -2,8 +2,9 @@ package com.example.investment_app
 
 
 import android.os.Bundle
-import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.chaquo.python.PyObject
 import com.chaquo.python.Python
 import com.chaquo.python.android.AndroidPlatform
 import com.github.mikephil.charting.animation.Easing
@@ -16,8 +17,8 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 
 data class Score(
-    val name:String,
-    val score: Int,
+    val name: String,
+    val score: Float,
 )
 
 class SimulatorActivity : AppCompatActivity() {
@@ -29,13 +30,12 @@ class SimulatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_simulator)
         lineChart = findViewById(R.id.lineChart)
         initLineChart()
-        setDataToLineChart()
         if (! Python.isStarted()) {
             Python.start(AndroidPlatform(this))
         }
         val py = Python.getInstance()
         val module = py.getModule("test")
-        Log.v("Test", module.callAttr("plot").toString())
+        setDataToLineChart(module.callAttr("plot"))
     }
 
     private fun initLineChart() {
@@ -65,9 +65,9 @@ class SimulatorActivity : AppCompatActivity() {
         }
     }
 
-    private fun setDataToLineChart() {
+    private fun setDataToLineChart(data: PyObject) {
         val entries: ArrayList<Entry> = ArrayList()
-        scoreList = getScoreList()
+        scoreList = getScoreList(data)
         for (i in scoreList.indices) {
             val score = scoreList[i]
             entries.add(Entry(i.toFloat(), score.score.toFloat()))
@@ -78,12 +78,13 @@ class SimulatorActivity : AppCompatActivity() {
         lineChart.invalidate()
     }
 
-    private fun getScoreList(): ArrayList<Score> {
-        scoreList.add(Score("John", 56))
-        scoreList.add(Score("Rey", 75))
-        scoreList.add(Score("Steve", 85))
-        scoreList.add(Score("Kevin", 45))
-        scoreList.add(Score("Jeff", 63))
+    private fun getScoreList(data: PyObject): ArrayList<Score> {
+        var text = ""
+        val test = findViewById<TextView>(R.id.textView2)
+        for (dataset in data) {
+            text += dataset.component2()
+        }
+        test.text = text
         return scoreList
     }
 }
