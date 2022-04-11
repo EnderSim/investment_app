@@ -15,6 +15,8 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import java.util.*
+import kotlin.collections.ArrayList
 
 data class Score(
     val name: String,
@@ -35,7 +37,7 @@ class SimulatorActivity : AppCompatActivity() {
         }
         val py = Python.getInstance()
         val module = py.getModule("test")
-        setDataToLineChart(module.callAttr("plot"))
+        setDataToLineChart(module.callAttr("plot"), module.callAttr("date"))
     }
 
     private fun initLineChart() {
@@ -65,26 +67,25 @@ class SimulatorActivity : AppCompatActivity() {
         }
     }
 
-    private fun setDataToLineChart(data: PyObject) {
+    private fun setDataToLineChart(data: PyObject, date: PyObject) {
         val entries: ArrayList<Entry> = ArrayList()
-        scoreList = getScoreList(data)
+        scoreList = getScoreList(data, date)
         for (i in scoreList.indices) {
             val score = scoreList[i]
             entries.add(Entry(i.toFloat(), score.score.toFloat()))
         }
         val lineDataSet = LineDataSet(entries, "")
-        val data = LineData(lineDataSet)
-        lineChart.data = data
+        val lineData = LineData(lineDataSet)
+        lineChart.data = lineData
         lineChart.invalidate()
     }
 
-    private fun getScoreList(data: PyObject): ArrayList<Score> {
-        var text = ""
-        val test = findViewById<TextView>(R.id.textView2)
-        for (dataset in data) {
-            text += dataset.component2()
+    private fun getScoreList(data: PyObject, date: PyObject): ArrayList<Score> {
+        val dataset = data.asList()
+        val dateList = date.asList()
+        for (i in 0 until dataset.size) {
+            scoreList.add(Score(dateList[i].toString(), dataset[i].toFloat()))
         }
-        test.text = text
         return scoreList
     }
 }
