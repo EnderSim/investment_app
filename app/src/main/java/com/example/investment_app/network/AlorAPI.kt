@@ -11,7 +11,7 @@ import java.util.concurrent.Callable
 import java.util.concurrent.FutureTask
 
 object AlorAPI {
-    private val refreshToken = "c0997600-3f05-4d68-86fb-6e8eda1c913a"
+    private val refreshToken = ""
 //    боевой контур
 //    private val url = "https://api.alor.ru"
 //    тестовый контур
@@ -61,7 +61,7 @@ object AlorAPI {
                 connection.requestMethod = "POST"
                 if (connection.responseCode == HttpURLConnection.HTTP_OK) {
                     val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
-                    var str = reader.readLine()
+                    val str = reader.readLine()
                     Log.i("API", "Взяли JWT")
                     JWT=  JSONObject(str).optString("AccessToken").toString()
                 } else {
