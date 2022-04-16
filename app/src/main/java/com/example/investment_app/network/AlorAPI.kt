@@ -11,7 +11,7 @@ import java.util.concurrent.Callable
 import java.util.concurrent.FutureTask
 
 object AlorAPI {
-    private val refreshToken = "c53a86de-5917-42da-85ca-3b9362c12a10"
+    private val refreshToken = ""
 //    боевой контур
 //    private val url = "https://api.alor.ru"
 //    тестовый контур
