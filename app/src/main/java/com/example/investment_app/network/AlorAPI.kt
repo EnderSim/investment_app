@@ -11,7 +11,7 @@ import java.util.concurrent.Callable
 import java.util.concurrent.FutureTask
 
 object AlorAPI {
-    private val refreshToken = ""
+    private val refreshToken = "c53a86de-5917-42da-85ca-3b9362c12a10"
 //    боевой контур
 //    private val url = "https://api.alor.ru"
 //    тестовый контур
@@ -19,7 +19,34 @@ object AlorAPI {
      var JWT = ""
     init {
         updateJWT()
+    }
 
+    fun getPrice(symbol : String): Double {
+        while (JWT == "") {
+            Thread.sleep(1000)
+        }
+        val call = Callable {
+            val connection =
+                URL("${url}/md/v2/orderbooks/SPBX/${symbol}").openConnection() as HttpURLConnection
+            connection.requestMethod = "GET"
+            connection.setRequestProperty("Authorization", "Bearer ${JWT}")
+            if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
+                val str = reader.readLine()
+                Log.i("API", "Взяли данные стакана")
+                return@Callable JSONObject(str)
+            } else {
+                Log.e("API", "Не работает получение данных из стакана")
+                Log.e("API", connection.responseCode.toString())
+                Log.e("API", connection.responseMessage.toString())
+                return@Callable JSONObject("")
+            }
+        }
+        val future = FutureTask(call)
+        Thread(future).start()
+        val bid = future.get().getJSONArray("bids").getJSONObject(0).get("price") as Double
+        val ask = future.get().getJSONArray("asks").getJSONObject(0).get("price") as Double
+        return (bid + ask) / 2
     }
 
     fun getStocks(): JSONArray {
