@@ -13,17 +13,19 @@ import java.util.concurrent.FutureTask
 
 object AlorAPI {
     private val refreshToken = ""
-//    боевой контур
+
+    //    боевой контур
 //    private val url = "https://api.alor.ru"
 //    тестовый контур
     private val url = "https://apidev.alor.ru"
-     var JWT = ""
+    var JWT = ""
+
     init {
         updateJWT()
     }
 
     //писать тикер компании
-    fun getPrice(symbol : String): Double {
+    fun getPrice(symbol: String): Double {
         val ticker = symbol.trim().uppercase()
         while (JWT == "") {
             Thread.sleep(1000)
@@ -37,6 +39,7 @@ object AlorAPI {
                 val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
                 val str = reader.readLine()
                 Log.i("API", "Взяли данные стакана")
+                Log.d("API", str)
                 return@Callable JSONObject(str)
             } else {
                 Log.e("API", "Не работает получение данных из стакана")
@@ -47,8 +50,19 @@ object AlorAPI {
         }
         val future = FutureTask(call)
         Thread(future).start()
-        val bid = future.get().getJSONArray("bids").getJSONObject(0).get("price") as Double
-        val ask = future.get().getJSONArray("asks").getJSONObject(0).get("price") as Double
+        var bid = 0.0
+        var ask = 0.0
+        try {
+            bid = future.get().getJSONArray("bids").getJSONObject(0).getDouble("price")
+        } catch (e: java.lang.Exception) {
+        }
+        try {
+            ask = future.get().getJSONArray("asks").getJSONObject(0).getDouble("price")
+        } catch (e: java.lang.Exception) {
+        }
+        if (ask == 0.0 || bid == 0.0)
+            return (bid + ask)
+
         return (bid + ask) / 2
     }
 
@@ -78,9 +92,9 @@ object AlorAPI {
         return future.get()
     }
 
-    //Токен живет ~30 мин
-    fun updateJWT()  {
-       Thread {
+    //Токен JWT живет ~30 мин
+    fun updateJWT() {
+        Thread {
             try {
 //                боевой контур
 //                val s = "https://oauth.alor.ru/refresh?token=${refreshToken}"
@@ -93,7 +107,7 @@ object AlorAPI {
                     val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
                     val str = reader.readLine()
                     Log.i("API", "Взяли JWT")
-                    JWT=  JSONObject(str).optString("AccessToken").toString()
+                    JWT = JSONObject(str).optString("AccessToken").toString()
                 } else {
                     Log.e("API", "Не работает получение JWT токена")
                     Log.e("API", connection.responseCode.toString())
