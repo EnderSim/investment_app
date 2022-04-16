@@ -7,6 +7,7 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
+import java.util.*
 import java.util.concurrent.Callable
 import java.util.concurrent.FutureTask
 
@@ -21,13 +22,15 @@ object AlorAPI {
         updateJWT()
     }
 
+    //писать тикер компании
     fun getPrice(symbol : String): Double {
+        val ticker = symbol.trim().uppercase()
         while (JWT == "") {
             Thread.sleep(1000)
         }
         val call = Callable {
             val connection =
-                URL("${url}/md/v2/orderbooks/SPBX/${symbol}").openConnection() as HttpURLConnection
+                URL("${url}/md/v2/orderbooks/SPBX/${ticker}").openConnection() as HttpURLConnection
             connection.requestMethod = "GET"
             connection.setRequestProperty("Authorization", "Bearer ${JWT}")
             if (connection.responseCode == HttpURLConnection.HTTP_OK) {
