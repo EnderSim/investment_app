@@ -1,18 +1,23 @@
 package com.example.investment_app
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.investment_app.network.AlorAPI
+import com.example.investment_app.search_stocks.Stock
 import com.example.investment_app.search_stocks.StockAdapter
 import com.example.stocksapptest.StockServiceHelper
 
 
 class SearchActivity : AppCompatActivity() {
     lateinit var adapter : StockAdapter
-    lateinit var stocksMax : List<String>
+    lateinit var stocksMax : List<Stock>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,43 +25,43 @@ class SearchActivity : AppCompatActivity() {
 
         init()
 
-        val search = findViewById<SearchView>(R.id.sv_search)
+        val search = findViewById<EditText>(R.id.sv_search)
 
-        Log.d("SEARCH", (search == null).toString())
-
-        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
+        search.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                adapter.filter(s.toString())
             }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                adapter.filter(newText)
-                return false
-            }
-
         })
 
     }
 
     private fun init() {
         val runnable = Runnable {
-            val stockNamesJSONArray = StockServiceHelper.getStocksList()!!
 
-            val stockNamesList = mutableListOf<String>()
+            val stockNamesJSONArray = AlorAPI.getStocks()
+
+            val stockList = mutableListOf<Stock>()
             for (i in 0 until stockNamesJSONArray.length()) {
-                stockNamesList.add(stockNamesJSONArray.get(i).toString())
+                var symbol = stockNamesJSONArray.getJSONObject(i).get("symbol").toString()
+
+                stockList.add(Stock(
+                    stockNamesJSONArray.getJSONObject(i).get("shortname").toString(),
+                    symbol,
+                    AlorAPI.getPrice(symbol)
+                ))
             }
-            stocksMax = stockNamesList.toList()
+            stocksMax = stockList.toList()
 
             runOnUiThread {
-                adapter = StockAdapter(stockNamesList, this)
+                adapter = StockAdapter(stockList, this)
 
                 val recyclerView = findViewById<RecyclerView>(R.id.rv_search)
                 recyclerView.layoutManager = LinearLayoutManager(this)
                 recyclerView.adapter = adapter
             }
 
-            Log.d("STOCKS", "get success")
         }
 
         val thread = Thread(runnable)
