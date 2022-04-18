@@ -10,15 +10,11 @@
         android:id="@+id/buttonSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="307dp"
+        android:layout_marginBottom="8dp"
         android:text="Акции"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonNews"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNews"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonPortfolio"
+        app:layout_constraintStart_toEndOf="@+id/buttonNews" />
 
     <TextView
         android:id="@+id/textView"
@@ -33,46 +29,36 @@
 
     <Button
         android:id="@+id/buttonProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="286dp"
-        android:layout_marginBottom="12dp"
-        android:text="Главное меню"
+        android:layout_width="102dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="8dp"
+        android:text="Главная"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonNews"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonPortfolio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="278dp"
+        android:layout_marginBottom="8dp"
         android:text="Портфель"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonProfile"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProfile"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintStart_toEndOf="@+id/buttonSearch" />
 
     <Button
         android:id="@+id/buttonNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="289dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="204dp"
+        android:layout_marginBottom="8dp"
         android:text="Новости"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonPortfolio"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPortfolio"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintStart_toEndOf="@+id/buttonProfile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
