@@ -41,7 +41,7 @@ class StockAdapter(
         holder.stockFullName.text = stocks[position].fullName
 
         holder.stockName.text = stocks[position].symbol
-        holder.stockPrice.text = String.format("%.2f", stocks[position].price)
+        holder.stockPrice.text = String.format("%.2f", stocks[position].price)+"$"
 
         holder.stockItem.setOnClickListener {
             val text = holder.stockName.text.toString()
