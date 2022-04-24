@@ -5,14 +5,13 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.investment_app.network.AlorAPI
 import com.example.investment_app.search_stocks.Stock
 import com.example.investment_app.search_stocks.StockAdapter
-import com.example.stocksapptest.StockServiceHelper
 
 
 class SearchActivity : AppCompatActivity() {
@@ -24,6 +23,20 @@ class SearchActivity : AppCompatActivity() {
         setContentView(R.layout.activity_search)
 
         init()
+
+//        val search = findViewById<SearchView>(R.id.sv_search)
+//
+//        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(newText: String?): Boolean {
+//                return false
+//            }
+//
+//            override fun onQueryTextChange(query: String?): Boolean {
+//                adapter.filter(query)
+//                return false
+//            }
+//
+//        })
 
         val search = findViewById<EditText>(R.id.sv_search)
 
@@ -38,6 +51,7 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun init() {
+
         val runnable = Runnable {
 
             val stockNamesJSONArray = AlorAPI.getStocks()
@@ -49,7 +63,7 @@ class SearchActivity : AppCompatActivity() {
                 stockList.add(Stock(
                     stockNamesJSONArray.getJSONObject(i).get("shortname").toString(),
                     symbol,
-                    AlorAPI.getPrice(symbol)
+                    AlorAPI.getPrice(symbol),
                 ))
             }
             stocksMax = stockList.toList()
@@ -60,11 +74,13 @@ class SearchActivity : AppCompatActivity() {
                 val recyclerView = findViewById<RecyclerView>(R.id.rv_search)
                 recyclerView.layoutManager = LinearLayoutManager(this)
                 recyclerView.adapter = adapter
+                Log.d("SetAdapter", "success")
             }
 
         }
 
         val thread = Thread(runnable)
         thread.start()
+
     }
 }

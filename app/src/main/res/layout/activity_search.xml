@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#c4c4c4"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -17,18 +18,32 @@
         app:layout_constraintTop_toBottomOf="@+id/sv_search"
         tools:listitem="@layout/stock_item" />
 
-    <EditText
-        android:id="@+id/sv_search"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:hint="Search stocks"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search stock"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="13dp"
+        android:text="Список ценных бумаг"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/sv_search"
+        android:background="@drawable/search_stock"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:paddingHorizontal="10dp"
+        android:ems="10"
+        android:drawableLeft="@drawable/loupe"
+        android:hint="Search stocks"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

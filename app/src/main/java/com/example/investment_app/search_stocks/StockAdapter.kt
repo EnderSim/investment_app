@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.investment_app.R
+import com.example.investment_app.network.AlorAPI
 
 data class Stock(
     var fullName : String,
@@ -37,9 +38,6 @@ class StockAdapter(
 
     override fun onBindViewHolder(holder: StockHolder, position: Int) {
 
-//        if (stocks[position].fullName.length > 22) {
-//            holder.stockFullName.text = stocks[position].fullName.substring(0, 21)+"..."
-//        }
         holder.stockFullName.text = stocks[position].fullName
 
         holder.stockName.text = stocks[position].symbol
@@ -58,8 +56,8 @@ class StockAdapter(
     override fun getItemCount(): Int = stocks.size
 
     fun filter(text : String?) {
-        if (text == null || text == "") {
-            stocks = maxStocks.toList()
+        stocks = if (text == null || text == "") {
+            maxStocks.toList()
         } else {
             val resList = mutableListOf<Stock>()
             for (el in maxStocks) {
@@ -68,7 +66,7 @@ class StockAdapter(
                     resList.add(el)
                 }
             }
-            stocks = resList.toList()
+            resList.toList()
         }
         notifyDataSetChanged()
     }
