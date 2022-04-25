@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">investment_app</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="fullname">Full Name</string>
+    <string name="email">Email</string>
+    <string name="already_have_an_account_login">Already have an account? <u>Login</u></string>
+    <string name="new_here_sign_up">New here? <u>Sign up</u></string>
+    <string name="registerButton">Зарегестрироваться</string>
+    <string name="loginButton">Авторизоваться</string>
 </resources>
