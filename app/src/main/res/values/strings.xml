@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">investment_app</string>
+    <string name="news">Новости</string>
+    <string name="last">Последние</string>
+    <string name="saved">Избранное</string>
+    <string name="new_1">Очередная новость</string>
+    <string name="plain">РААА</string>
+    <string name="plain_button">Нажми меня, сука</string>
+    <string name="button">Button</string>
+    <string name="new1">Button</string>
+    <string name="new_3">new_2</string>
+    <string name="new3">new3</string>
+    <string name="time">TextView</string>
+    <string name="source">TextView</string>
+    <string name="more">TextView</string>
+    <string name="details">TextView</string>
+    <string name="detail">TextView</string>
+    <string name="src">TextView</string>
+    <string name="data">TextView</string>
+    <string name="new_4">new4</string>
+</resources>
