@@ -1,40 +1,34 @@
 # investment_app
 
-package com.example.invest_notification
+package com.example.notification_app
 
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Intent
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        const val NOTIFICATION_ID = 101
+        const val CHANNEL_ID = "channelID"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-        val intent = Intent(this, MainActivity::class.java)
-        val resultIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-
-
-        val builder = NotificationCompat.Builder( this)
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(android.R.drawable.alert_dark_frame)
             .setContentTitle("Title")
-            .setContentText("Notification text")
-            .setContentIntent(resultIntent)
+            .setContentText("Text")
+            .setAutoCancel(true)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
-        val notification = builder.build()
-        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-        notificationManager.notify(1, notification)
+        with(NotificationManagerCompat.from(this)) {
+            notify(NOTIFICATION_ID, builder.build()) // посылаем уведомление
+        }
 
 
-
-
-        //notificationManager.cancel(1)
-        //notificationManager.cancelAll()
 
     }
-}
