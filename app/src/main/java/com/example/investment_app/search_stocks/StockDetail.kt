@@ -26,11 +26,12 @@ class StockDetail : AppCompatActivity() {
 
 
 
-    fun test(){
+    fun stockChangeInf(){
         val token = intent.getStringExtra(STOCK_NAME)
-        AlorAPI.updateJWT()
+       // AlorAPI.updateJWT()
         CompanyPrice?.setText(AlorAPI.getPrice(token.toString()).toString() + "$")
-        //Log.d("Test123", token.toString())
+        CompanyName?.setText(token.toString())
+    //Log.d("Test123", token.toString())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +39,7 @@ class StockDetail : AppCompatActivity() {
         setContentView(R.layout.activity_stock_detail)
         CompanyName = findViewById(R.id.CompanyName_txt)
         CompanyPrice = findViewById(R.id.StockPrice_txt)
-        test()
+        stockChangeInf()
 
     }
 
