@@ -13,10 +13,6 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
-        bindingClass.buttonSettings.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
-        }
 
     }
 }

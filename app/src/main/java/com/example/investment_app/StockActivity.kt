@@ -3,9 +3,9 @@ package com.example.investment_app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class SearchActivity : AppCompatActivity() {
+class StockActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search)
+        setContentView(R.layout.activity_stock)
     }
 }

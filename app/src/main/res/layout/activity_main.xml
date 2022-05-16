@@ -18,15 +18,15 @@
         app:layout_constraintStart_toStartOf="parent"></ImageView>
 
     <Button
-        android:id="@+id/buttonSearch"
+        android:id="@+id/buttonStock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Акции"
         android:backgroundTint="#8377DB"
+        android:text="Акции"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonNews"
-        app:layout_constraintStart_toEndOf="@+id/buttonProfile" />
+        app:layout_constraintStart_toEndOf="@+id/buttonMain" />
 
     <TextView
         android:id="@+id/textView"
@@ -42,16 +42,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/buttonProfile"
+        android:id="@+id/buttonMain"
         android:layout_width="102dp"
         android:layout_height="48dp"
         android:layout_marginStart="9dp"
         android:layout_marginBottom="8dp"
+        android:backgroundTint="#8377DB"
         android:text="Главная"
         android:textSize="12sp"
-        android:backgroundTint="#8377DB"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSearch"
+        app:layout_constraintEnd_toStartOf="@+id/buttonStock"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -78,23 +79,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonPortfolio"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/buttonSearch" />
+        app:layout_constraintStart_toEndOf="@+id/buttonStock" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="44dp"
-        android:text="Главная страница"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/inter"
+        android:text="Главная страница"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonInfo"
         android:layout_width="148dp"
         android:layout_height="136dp"
         android:layout_marginTop="7dp"
@@ -107,7 +108,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonBalance"
         android:layout_width="148dp"
         android:layout_height="136dp"
         android:layout_marginStart="45dp"
@@ -121,7 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonWell"
         android:layout_width="148dp"
         android:layout_height="136dp"
         android:layout_marginStart="44dp"
@@ -132,10 +133,10 @@
         android:backgroundTint="#8377DB"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonBalance" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonTest"
         android:layout_width="148dp"
         android:layout_height="136dp"
         android:layout_marginTop="25dp"
@@ -145,10 +146,10 @@
         android:fontFamily="@font/inter"
         android:text="Узнай насколько ты крутой инвестор"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonInfo" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/ButtonNotes"
         android:layout_width="341dp"
         android:layout_height="61dp"
         android:layout_marginTop="10dp"
@@ -158,10 +159,10 @@
         android:textColor="#000000"
         android:backgroundTint="#8377DB"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonWell" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/buttonCalendar"
         android:layout_width="341dp"
         android:layout_height="61dp"
         android:layout_marginTop="10dp"
@@ -171,10 +172,10 @@
         android:fontFamily="@font/inter"
         android:backgroundTint="#8377DB"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonNotes" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/buttonProCoach"
         android:layout_width="341dp"
         android:layout_height="61dp"
         android:layout_marginTop="10dp"
@@ -184,6 +185,27 @@
         android:fontFamily="@font/inter"
         android:backgroundTint="#8377DB"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalendar" />
+
+    <Button
+        android:id="@+id/buttonSettings"
+        android:layout_width="84dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#E5E5E5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/buttonProfile"
+        android:layout_width="84dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="84dp"
+        android:backgroundTint="#E5E5E5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

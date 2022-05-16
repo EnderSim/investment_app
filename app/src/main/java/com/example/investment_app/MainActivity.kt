@@ -24,10 +24,41 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PortfolioActivity::class.java)
             startActivity(intent)
         }
-        bindingClass.buttonSearch.setOnClickListener {
-            val intent = Intent(this, SearchActivity::class.java)
+        bindingClass.buttonWell.setOnClickListener {
+            val intent = Intent(this, WellActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.ButtonNotes.setOnClickListener {
+            val intent = Intent(this, NotesActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.buttonCalendar.setOnClickListener {
+            val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.buttonProCoach.setOnClickListener {
+            val intent = Intent(this, ProcoachActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.buttonStock.setOnClickListener {
+            val intent = Intent(this, StockActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.buttonSettings.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.buttonBalance.setOnClickListener {
+            val intent = Intent(this, BalanceActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.buttonInfo.setOnClickListener {
+            val intent = Intent(this, InfoActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.buttonTest.setOnClickListener {
+            val intent = Intent(this, TestActivity::class.java)
             startActivity(intent)
         }
     }
-
 }
