@@ -208,7 +208,7 @@ object AlorAPI {
 //    "symbol": "SBER",
 //    "shortname": "Сбербанк",
 //    "description": "Сбербанк России ПАО ао",
-    fun getShortName(symbol: String): JSONObject{
+    fun getStockInfo(symbol: String): JSONObject{
         while (JWT == "") {
             Thread.sleep(1000)
         }
