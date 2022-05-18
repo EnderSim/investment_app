@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }
+
+        // Переход на страницу "Что есть в приложении"
+//        val intent = Intent(this, LearnActivity::class.java)
+//        startActivity(intent)
     }
 
 }
