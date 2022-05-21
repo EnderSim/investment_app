@@ -12,16 +12,45 @@ import java.util.concurrent.Callable
 import java.util.concurrent.FutureTask
 
 object AlorAPI {
-    private val refreshToken = "f48a67db-2109-49e8-88cf-45d35f8f5505"
+    private val refreshToken = "099b80b0-d03a-4466-9af4-dd2d9fad9b65"
+    private val exchange = "SPBX"
 
     //    боевой контур
 //    private val url = "https://api.alor.ru"
 //    тестовый контур
     private val url = "https://apidev.alor.ru"
     var JWT = ""
+    var portfolio = ""
 
     init {
         updateJWT()
+    }
+
+    //Токен JWT живет ~30 мин
+    fun updateJWT() {
+        Thread {
+            try {
+//                боевой контур
+//                val s = "https://oauth.alor.ru/refresh?token=${refreshToken}"
+//                тестовый контур
+                val s = "https://oauthdev.alor.ru/refresh?token=${refreshToken}"
+
+                val connection = URL(s).openConnection() as HttpURLConnection
+                connection.requestMethod = "POST"
+                if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                    val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
+                    val str = reader.readLine()
+                    Log.i("API", "Взяли JWT")
+                    JWT = JSONObject(str).optString("AccessToken").toString()
+                } else {
+                    Log.e("API", "Не работает получение JWT токена")
+                    Log.e("API", connection.responseCode.toString())
+                    Log.e("API", connection.responseMessage.toString())
+                }
+            } catch (e: Exception) {
+                Log.e("API", e.stackTraceToString())
+            }
+        }.start()
     }
 
     //писать тикер компании
@@ -32,14 +61,13 @@ object AlorAPI {
         }
         val call = Callable {
             val connection =
-                URL("${url}/md/v2/orderbooks/SPBX/${ticker}").openConnection() as HttpURLConnection
+                URL("${url}/md/v2/orderbooks/${exchange}/${ticker}").openConnection() as HttpURLConnection
             connection.requestMethod = "GET"
             connection.setRequestProperty("Authorization", "Bearer ${JWT}")
             if (connection.responseCode == HttpURLConnection.HTTP_OK) {
                 val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
                 val str = reader.readLine()
                 Log.i("API", "Взяли данные стакана")
-                Log.d("API", str)
                 return@Callable JSONObject(str)
             } else {
                 Log.e("API", "Не работает получение данных из стакана")
@@ -72,16 +100,17 @@ object AlorAPI {
         }
         val call = Callable {
             val connection =
-                URL("${url}/md/v2/Securities/SPBX").openConnection() as HttpURLConnection
+                URL("${url}/md/v2/Securities/${exchange}").openConnection() as HttpURLConnection
             connection.requestMethod = "GET"
             connection.setRequestProperty("Authorization", "Bearer ${JWT}")
+
             if (connection.responseCode == HttpURLConnection.HTTP_OK) {
                 val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
                 val str = reader.readLine()
-                Log.i("API", "Взяли данные")
+                Log.i("API", "Взяли данные, (getStocks)")
                 return@Callable JSONArray(str)
             } else {
-                Log.e("API", "Не работает получение данных")
+                Log.e("API", "Не работает получение данных, (getStocks)")
                 Log.e("API", connection.responseCode.toString())
                 Log.e("API", connection.responseMessage.toString())
                 return@Callable JSONArray("")
@@ -92,30 +121,118 @@ object AlorAPI {
         return future.get()
     }
 
-    //Токен JWT живет ~30 мин
-    fun updateJWT() {
-        Thread {
-            try {
-//                боевой контур
-//                val s = "https://oauth.alor.ru/refresh?token=${refreshToken}"
-//                тестовый контур
-                val s = "https://oauthdev.alor.ru/refresh?token=${refreshToken}"
 
-                val connection = URL(s).openConnection() as HttpURLConnection
-                connection.requestMethod = "POST"
-                if (connection.responseCode == HttpURLConnection.HTTP_OK) {
-                    val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
-                    val str = reader.readLine()
-                    Log.i("API", "Взяли JWT")
-                    JWT = JSONObject(str).optString("AccessToken").toString()
-                } else {
-                    Log.e("API", "Не работает получение JWT токена")
-                    Log.e("API", connection.responseCode.toString())
-                    Log.e("API", connection.responseMessage.toString())
-                }
-            } catch (e: Exception) {
-                Log.e("API", e.stackTraceToString())
+    //Открытые позиции "symbol" - символ,
+    // "avgPrice" - средняя цена,
+    // "qty" - количество
+    fun getOpenPositions(): JSONArray {
+        while (JWT == "") {
+            Thread.sleep(1000)
+        }
+        val call = Callable {
+            val connection =
+                URL("${url}/md/v2/Clients/${exchange}/${portfolio}/positions").openConnection() as HttpURLConnection
+            connection.requestMethod = "GET"
+            connection.setRequestProperty("Authorization", "Bearer ${JWT}")
+            if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
+                val str = reader.readLine()
+                Log.i("API", "Взяли данные, (getOpenPositions)")
+                return@Callable JSONArray(str)
+            } else {
+                Log.e("API", "Не работает получение данных, (getOpenPositions)")
+                Log.e("API", connection.responseCode.toString())
+                Log.e("API", connection.responseMessage.toString())
+                return@Callable JSONArray()
             }
-        }.start()
+        }
+        val future = FutureTask(call)
+        Thread(future).start()
+        return future.get()
     }
+
+    // информации о портфеле "profit" - прибыль,
+    // "profitRate" - процент прибыли портфеля,
+    // "portfolioEvaluation" - стоимость портфеля
+    fun getProfileSummary(): JSONArray {
+        while (JWT == "") {
+            Thread.sleep(1000)
+        }
+        val call = Callable {
+            val connection =
+                URL("${url}/md/v2/clients/${exchange}/${portfolio}/summary").openConnection() as HttpURLConnection
+            connection.requestMethod = "GET"
+            connection.setRequestProperty("Authorization", "Bearer ${JWT}")
+            if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
+                val str = reader.readLine()
+                Log.i("API", "Взяли данные, (getProfileSummary)")
+                return@Callable JSONArray(str)
+            } else {
+                Log.e("API", "Не работает получение данных, (getProfileSummary)")
+                Log.e("API", connection.responseCode.toString())
+                Log.e("API", connection.responseMessage.toString())
+                return@Callable JSONArray()
+            }
+        }
+        val future = FutureTask(call)
+        Thread(future).start()
+        return future.get()
+    }
+
+    fun getDailyVolume(symbol: String): Int{
+        while (JWT == "") {
+            Thread.sleep(1000)
+        }
+        val call = Callable {
+            val connection =
+                URL("${url}/md/v2/Securities/${exchange}:${symbol}/quotes").openConnection() as HttpURLConnection
+            connection.requestMethod = "GET"
+            connection.setRequestProperty("Authorization", "Bearer ${JWT}")
+            if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
+                val str = reader.readLine()
+                Log.i("API", "Взяли данные, (getDailyVolume)")
+                return@Callable JSONArray(str)
+            } else {
+                Log.e("API", "Не работает получение данных, (getDailyVolume)")
+                Log.e("API", connection.responseCode.toString())
+                Log.e("API", connection.responseMessage.toString())
+                return@Callable JSONArray()
+            }
+        }
+        val future = FutureTask(call)
+        Thread(future).start()
+        return future.get().getJSONObject(0).getInt("volume")
+    }
+//    "symbol": "SBER",
+//    "shortname": "Сбербанк",
+//    "description": "Сбербанк России ПАО ао",
+    fun getStockInfo(symbol: String): JSONObject{
+        while (JWT == "") {
+            Thread.sleep(1000)
+        }
+        val call = Callable {
+            val connection =
+                URL("${url}/md/v2/Securities/${exchange}/${symbol}").openConnection() as HttpURLConnection
+            connection.requestMethod = "GET"
+            connection.setRequestProperty("Authorization", "Bearer ${JWT}")
+            if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                val reader = BufferedReader(InputStreamReader(connection.inputStream, "UTF-8"))
+                val str = reader.readLine()
+                Log.i("API", "Взяли данные, (getShortName)")
+                return@Callable JSONObject(str)
+            } else {
+                Log.e("API", "Не работает получение данных, (getShortName)")
+                Log.e("API", connection.responseCode.toString())
+                Log.e("API", connection.responseMessage.toString())
+                return@Callable JSONObject()
+            }
+        }
+        val future = FutureTask(call)
+        Thread(future).start()
+        return future.get()
+    }
+
+
 }
