@@ -1,10 +1,12 @@
 package com.example.investment_app
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +22,26 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
+
+        val bottomMain = findViewById<LinearLayout>(R.id.search_bottom_main)
+        val bottomActions = findViewById<LinearLayout>(R.id.search_bottom_actions)
+        val bottomNews = findViewById<LinearLayout>(R.id.search_bottom_news)
+        val bottomPortfolio = findViewById<LinearLayout>(R.id.search_bottom_portfolio)
+
+        bottomActions.alpha = 0.5f
+
+        bottomMain.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        bottomNews.setOnClickListener {
+            val intent = Intent(this, NewsActivity::class.java)
+            startActivity(intent)
+        }
+        bottomPortfolio.setOnClickListener {
+            val intent = Intent(this, PortfolioActivity::class.java)
+            startActivity(intent)
+        }
 
         init()
 
