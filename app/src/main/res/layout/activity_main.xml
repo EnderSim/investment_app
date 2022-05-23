@@ -257,4 +257,19 @@
         app:srcCompat="@drawable/img_4"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="116dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:text="1010"
+        android:textColor="#000000"
+        android:background="#E5E5E5"
+        android:textSize="20dp"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonBalance"
+        app:layout_constraintEnd_toEndOf="@+id/buttonBalance"
+        app:layout_constraintStart_toStartOf="@+id/buttonBalance"
+        app:layout_constraintTop_toTopOf="@+id/buttonBalance" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
