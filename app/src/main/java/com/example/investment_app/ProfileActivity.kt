@@ -3,6 +3,7 @@ package com.example.investment_app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import com.example.investment_app.databinding.ActivityMainBinding
 import com.example.investment_app.databinding.ActivityProfileBinding
 
@@ -15,6 +16,11 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(bindingClass.root)
         bindingClass.buttonSettings.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+        bindingClass.whatIsInApp.setOnClickListener {
+            val intent = Intent(this, LearnActivity::class.java)
             startActivity(intent)
         }
 
