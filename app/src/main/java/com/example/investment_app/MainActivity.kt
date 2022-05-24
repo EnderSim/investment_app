@@ -2,11 +2,18 @@ package com.example.investment_app
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.investment_app.databinding.ActivityMainBinding
+import org.json.JSONArray
+import org.json.JSONObject
+import com.example.investment_app.network.AlorAPI
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,12 +60,21 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         bindingClass.buttonInfo.setOnClickListener {
-            val intent = Intent(this, InfoActivity::class.java)
-            startActivity(intent)
+  //          val intent = Intent(this, InfoActivity::class.java)
+   //         startActivity(intent)
         }
         bindingClass.buttonTest.setOnClickListener {
             val intent = Intent(this, TestActivity::class.java)
             startActivity(intent)
         }
+        try {
+            val profileSummaryJSONArray = AlorAPI.getProfileSummary()
+            val search = findViewById<TextView>(R.id.textView6)
+            search.text= profileSummaryJSONArray.getJSONObject(0).get("portfolioEvaluation").toString()
+        }
+        catch (e:Exception){
+            Log.e("API",e.toString())
+        }
     }
+
 }

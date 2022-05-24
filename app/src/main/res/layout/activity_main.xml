@@ -7,23 +7,10 @@
     android:background="#E5E5E5"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        android:layout_centerInParent="true"
-        android:background="#0B0B0B"
-        android:scaleType="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProCoach"></ImageView>
-
     <TextView
         android:id="@+id/textView"
-        android:layout_width="275dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:layout_marginBottom="2dp"
         android:fontFamily="@font/inter"
@@ -118,158 +105,134 @@
     <Button
         android:id="@+id/ButtonNotes"
         android:layout_width="341dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="35dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="35dp"
         android:layout_marginBottom="2dp"
         android:backgroundTint="#8377DB"
+        android:padding="15dp"
         android:fontFamily="@font/inter"
         android:text="Мои заметки"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/buttonCalendar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonWell" />
 
     <Button
         android:id="@+id/buttonCalendar"
         android:layout_width="341dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="35dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="2dp"
         android:backgroundTint="#8377DB"
         android:fontFamily="@font/inter"
+        android:padding="15dp"
         android:text="Календарь инвестора"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/buttonProCoach"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ButtonNotes" />
 
     <Button
         android:id="@+id/buttonProCoach"
         android:layout_width="341dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="35dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="35dp"
         android:backgroundTint="#8377DB"
         android:fontFamily="@font/inter"
+        android:padding="15dp"
         android:text="Профессиональное обучение"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonCalendar" />
-
-    <ImageButton
-        android:id="@+id/buttonMain"
-        android:layout_width="87dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="13dp"
-        android:backgroundTint="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/buttonNews"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/img_2"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/buttonNews"
-        android:layout_width="87dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="13dp"
-        android:backgroundTint="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/buttonStock"
-        app:layout_constraintHorizontal_bias="0.911"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/img_1"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/buttonStock"
-        android:layout_width="87dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="13dp"
-        android:backgroundTint="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/buttonPortfolio"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/img"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/buttonPortfolio"
-        android:layout_width="87dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="13dp"
-        android:backgroundTint="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.968"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/img_3"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/buttonSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
         android:background="#E5E5E5"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonProfile"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img_5"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/buttonProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
         android:background="#E5E5E5"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/buttonSettings"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img_4"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="116dp"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="1010"
         android:textColor="#000000"
         android:background="#E5E5E5"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonBalance"
         app:layout_constraintEnd_toEndOf="@+id/buttonBalance"
         app:layout_constraintStart_toStartOf="@+id/buttonBalance"
         app:layout_constraintTop_toTopOf="@+id/buttonBalance" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/buttonHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#000000"
+            app:srcCompat="@drawable/img_2"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/buttonNews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:background="#000000"
+            app:srcCompat="@drawable/img_1"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/buttonStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#000000"
+            app:srcCompat="@drawable/img"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/buttonPortfolio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#000000"
+            app:srcCompat="@drawable/img_3"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
