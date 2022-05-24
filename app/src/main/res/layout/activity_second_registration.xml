@@ -38,7 +38,7 @@
             android:layout_marginBottom="656dp"
             android:fontFamily="@font/interbold"
             android:gravity="center"
-            android:text="Авторизоваться"
+            android:text="@string/passport"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -59,49 +59,14 @@
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email_text"
+                android:id="@+id/passport_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/forgot"
-            android:layout_width="140dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="550dp"
-            android:fontFamily="@font/interbold"
-            android:gravity="center_horizontal"
-            android:text="Забыли пароль?"
-            android:textColor="#91919F"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullname">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/password" />
+                android:hint="@string/passport_data"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/buttonContinue3"
+            android:id="@+id/buttonContinue2"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="292dp"
             android:layout_height="45dp"

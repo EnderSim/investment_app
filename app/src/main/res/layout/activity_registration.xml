@@ -8,43 +8,59 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4">
 
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:clickable="true"
+            android:layout_width="30dp"
+            android:background="#00FFFFFF"
+            android:layout_height="25dp"
+            android:layout_marginBottom="654dp"
+            android:layout_marginEnd="300dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:focusable="true" />
+
         <TextView
-            android:textColor="@color/purple_200"
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="656dp"
+            android:fontFamily="@font/interbold"
             android:gravity="center"
             android:text="@string/sign_up"
-            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:targetApi="jelly_bean" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutFullname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="55dp"
             android:layout_marginRight="30dp"
-            android:hint="@string/fullname"
+            android:hint="@string/full_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fullname"
+                android:id="@+id/fullname_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:targetApi="jelly_bean" />
+                android:hint="@string/full_name" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -52,37 +68,59 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="30dp"
-            android:hint="@string/email"
+            android:hint="@string/birth_date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullname">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email"
+                android:id="@+id/birthdate_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:targetApi="jelly_bean" />
+                android:hint="@string/birth_date" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutUsername"
+            android:id="@+id/textInputLayoutCitizenship"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="30dp"
-            android:hint="@string/username"
+            android:hint="@string/citizenship"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/username"
+                android:id="@+id/citizenship_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:targetApi="jelly_bean" />
+                android:hint="@string/citizenship" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutBirthDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:hint="@string/email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCitizenship">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -90,16 +128,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="30dp"
             android:hint="@string/password"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUsername"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBirthDate"
             tools:layout_editor_absoluteX="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
+                android:id="@+id/password_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:targetApi="jelly_bean" />
+                android:hint="@string/password" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <ProgressBar
@@ -112,28 +151,22 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword" />
 
         <Button
-            android:focusableInTouchMode="false"
-            android:backgroundTint="@color/purple_200"
-            android:id="@+id/buttonSignUp"
+            android:id="@+id/buttonContinue"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="@string/sign_up"
+            android:layout_width="292dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="670dp"
+            android:background="@drawable/button_bg"
+            android:focusableInTouchMode="false"
+            android:text="@string/registration_continue"
+            android:textAllCaps="false"
+            android:textColor="#FCFCFC"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progress" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/loginText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="@string/already_have_an_account_login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSignUp"
-            tools:targetApi="jelly_bean" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

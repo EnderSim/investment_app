@@ -10,6 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Investment_app">
         <activity
+            android:name=".CreateAccountActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".FinalResetActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".PasswordResetActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".SecondRegistrationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
             android:name=".RegistrationActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
@@ -20,7 +36,7 @@
         <activity
             android:name=".EntranceActivity"
             android:exported="true"
-            android:theme="@style/Theme.Design.Light.NoActionBar" >
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,8 +60,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

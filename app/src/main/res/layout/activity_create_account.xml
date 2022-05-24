@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="#F5010101"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -21,7 +21,7 @@
             android:layout_width="30dp"
             android:background="#00FFFFFF"
             android:layout_height="25dp"
-            android:layout_marginBottom="654dp"
+            android:layout_marginBottom="640dp"
             android:layout_marginEnd="300dp"
             android:src="@drawable/ic_arrow_back"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -29,86 +29,61 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:focusable="true"
-            app:tint="@color/black" />
+            app:tint="@color/white" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="656dp"
             android:fontFamily="@font/interbold"
             android:gravity="center"
-            android:text="Авторизоваться"
-            android:textColor="@color/black"
+            android:text="Открытие брокерского счета"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutFullname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginRight="30dp"
+        <TextView
+            android:layout_width="260dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginEnd="100dp"
+            android:fontFamily="@font/interbold"
+            android:text="БРОКЕРСКИЙ СЧЕТ"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/email"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/forgot"
-            android:layout_width="140dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="550dp"
+            android:layout_width="260dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="520dp"
+            android:layout_marginEnd="100dp"
             android:fontFamily="@font/interbold"
-            android:gravity="center_horizontal"
-            android:text="Забыли пароль?"
-            android:textColor="#91919F"
+            android:text="Инвестируйте в акции, облигации и другие ценные бумаги"
+            android:textColor="#A8A8A8"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullname">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/password" />
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
-            android:id="@+id/buttonContinue3"
+            android:id="@+id/create_account"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="292dp"
             android:layout_height="45dp"
             android:layout_marginTop="670dp"
-            android:background="@drawable/button_bg"
+            android:background="@drawable/button_bg3"
             android:focusableInTouchMode="false"
-            android:text="@string/registration_continue"
+            android:text="Открыть счет"
             android:textAllCaps="false"
             android:textColor="#FCFCFC"
             android:textSize="18sp"
@@ -116,6 +91,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/image3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

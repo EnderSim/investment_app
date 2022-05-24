@@ -1,9 +1,9 @@
 package com.example.investment_app
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
 class EntranceActivity : AppCompatActivity() {
 
@@ -14,19 +14,17 @@ class EntranceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entrance)
 
-        buttonLogin = findViewById(R.id.loginButton)
+        buttonLogin = findViewById(R.id.buttonLogin)
         buttonRegister = findViewById(R.id.registerButton)
 
         buttonLogin.setOnClickListener {
             val intent = Intent(applicationContext, LoginActivity::class.java)
             startActivity(intent)
-            finish()
         }
 
         buttonRegister.setOnClickListener {
             val intent = Intent(applicationContext, RegistrationActivity::class.java)
             startActivity(intent)
-            finish()
         }
 
     }

@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">investment_app</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="sign_up">Sign up</string>
-    <string name="fullname">Full Name</string>
-    <string name="email">Email</string>
+    <string name="sign_up">Зарегестрироваться</string>
     <string name="already_have_an_account_login">Already have an account? <u>Login</u></string>
     <string name="new_here_sign_up">New here? <u>Sign up</u></string>
     <string name="registerButton">Зарегестрироваться</string>
     <string name="loginButton">Авторизоваться</string>
+    <string name="investment_teaching">Обучение инвестициям</string>
+    <string name="newbies">Здесь мы научим новичков инвестировать</string>
+    <string name="full_name">ФИО</string>
+    <string name="birth_date">Дата рождения</string>
+    <string name="citizenship">Гражданство</string>
+    <string name="email">Электронная почта</string>
+    <string name="password">Пароль</string>
+    <string name="registration_continue">Продолжить</string>
+    <string name="passport">Паспортные данные</string>
+    <string name="passport_data">Серия и номер</string>
 </resources>
