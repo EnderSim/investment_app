@@ -17,8 +17,10 @@ class StockDetail : AppCompatActivity() {
 
 
     companion object {
-        private var CompanyName: TextView? = null
-        private var CompanyPrice: TextView? = null
+        private var companyName: TextView? = null
+        private var companyFullName: TextView? = null
+        private var companyPrice: TextView? = null
+        private var profitValue: TextView? = null
         const val STOCK_NAME = "STOCK_NAME"
 
 
@@ -29,16 +31,28 @@ class StockDetail : AppCompatActivity() {
     fun stockChangeInf(){
         val token = intent.getStringExtra(STOCK_NAME)
        // AlorAPI.updateJWT()
-        CompanyPrice?.setText(AlorAPI.getPrice(token.toString()).toString() + "$")
-        CompanyName?.setText(token.toString())
+
+        val shortNameComp = AlorAPI.getStockInfo(token.toString()).getString("shortname")
+        val fullNameComp = AlorAPI.getStockInfo(token.toString()).getString("description")
+        var dailyValueInf = AlorAPI.getDailyVolume(token.toString()).toString()
+        companyName?.setText(shortNameComp.toString())
+        companyFullName?.setText("Полное название: " + fullNameComp.toString())
+
+        if (AlorAPI.getDailyVolume(token.toString()) == 0){
+            dailyValueInf = "Нет информации"
+        }
+        profitValue?.setText("Объем: " + dailyValueInf)
+        companyPrice?.setText(AlorAPI.getPrice(token.toString()).toString() + "$")
     //Log.d("Test123", token.toString())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stock_detail)
-        CompanyName = findViewById(R.id.CompanyName_txt)
-        CompanyPrice = findViewById(R.id.StockPrice_txt)
+        companyName = findViewById(R.id.CompanyName_txt)
+        companyFullName = findViewById(R.id.FullName_txt)
+        companyPrice = findViewById(R.id.StockPrice_txt)
+        profitValue = findViewById(R.id.ProfitVolume_txt)
         stockChangeInf()
 
     }
