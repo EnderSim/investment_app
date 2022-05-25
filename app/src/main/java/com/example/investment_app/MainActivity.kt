@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.investment_app.databinding.ActivityMainBinding
 import com.example.investment_app.network.AlorAPI
 import org.jsoup.Jsoup
-import org.jsoup.select.Elements
-import org.w3c.dom.Document
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
