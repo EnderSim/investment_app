@@ -175,11 +175,11 @@
         android:layout_width="116dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="1010"
-        android:textColor="#000000"
         android:background="#E5E5E5"
-        android:textSize="20sp"
         android:elevation="2dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonBalance"
         app:layout_constraintEnd_toEndOf="@+id/buttonBalance"
         app:layout_constraintStart_toStartOf="@+id/buttonBalance"
@@ -234,5 +234,36 @@
             app:srcCompat="@drawable/img_3"
             tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/USDView"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="#E5E5E5"
+        android:elevation="2dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonWell"
+        app:layout_constraintEnd_toEndOf="@+id/buttonWell"
+        app:layout_constraintStart_toStartOf="@+id/buttonWell"
+        app:layout_constraintTop_toTopOf="@+id/buttonWell" />
+
+    <TextView
+        android:id="@+id/EURView"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="#E5E5E5"
+        android:elevation="2dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonWell"
+        app:layout_constraintEnd_toEndOf="@+id/buttonWell"
+        app:layout_constraintStart_toStartOf="@+id/buttonWell"
+        app:layout_constraintTop_toTopOf="@+id/buttonWell"
+        app:layout_constraintVertical_bias="0.925" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

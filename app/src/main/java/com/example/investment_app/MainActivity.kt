@@ -6,10 +6,10 @@ import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.investment_app.databinding.ActivityMainBinding
-import org.json.JSONArray
-import org.json.JSONObject
 import com.example.investment_app.network.AlorAPI
-import java.lang.Exception
+import org.jsoup.Jsoup
+import org.jsoup.select.Elements
+import org.w3c.dom.Document
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
@@ -71,6 +71,26 @@ class MainActivity : AppCompatActivity() {
             val profileSummaryJSONArray = AlorAPI.getProfileSummary()
             val search = findViewById<TextView>(R.id.textView6)
             search.text= profileSummaryJSONArray.getJSONObject(0).get("portfolioEvaluation").toString()
+        }
+        catch (e:Exception){
+            Log.e("API",e.toString())
+        }
+        try {
+            val url = "https://api.coingate.com/v2/rates/merchant/USD/RUB"
+            val doc = Jsoup.connect(url).get()
+            val pre = doc.select("pre")
+            val search = findViewById<TextView>(R.id.USDView)
+            search.text = pre.toString()
+        }
+        catch (e:Exception){
+            Log.e("API",e.toString())
+        }
+        try {
+            val url = "https://api.coingate.com/v2/rates/merchant/EUR/RUB"
+            val doc = Jsoup.connect(url).get()
+            val pre = doc.select("pre")
+            val search = findViewById<TextView>(R.id.EURView)
+            search.text = pre.toString()
         }
         catch (e:Exception){
             Log.e("API",e.toString())
