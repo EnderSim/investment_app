@@ -204,9 +204,11 @@ object AlorAPI {
         val future = FutureTask(call)
         Thread(future).start()
         var result = future.get().getJSONObject(0).get("volume")
-        if (result.equals(null))
-            result = 0
-        return Integer.parseInt(result.toString())
+        result = if (result.equals(null))
+            0
+        else
+            future.get().getJSONObject(0).getInt("volume")
+        return result
     }
 //    "symbol": "SBER",
 //    "shortname": "Сбербанк",

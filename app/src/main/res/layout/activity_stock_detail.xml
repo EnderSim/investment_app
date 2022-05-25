@@ -143,7 +143,7 @@
                 android:gravity="center"
                 android:paddingBottom="5dp"
                 android:text="Главная"
-                android:textColor="#9789FF" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -162,7 +162,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                app:srcCompat="@drawable/bottom_menu_actions" />
+                app:srcCompat="@drawable/bottom_menu_actions_pressed" />
 
             <TextView
                 android:id="@+id/textView14"
@@ -171,8 +171,7 @@
                 android:gravity="center"
                 android:paddingBottom="5dp"
                 android:text="Акции"
-                android:textColor="@color/white" />
-
+                android:textColor="#9789FF" />
         </LinearLayout>
 
         <LinearLayout

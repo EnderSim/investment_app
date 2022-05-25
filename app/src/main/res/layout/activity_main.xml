@@ -188,51 +188,124 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         android:orientation="horizontal"
-        android:background="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:background="@drawable/learn_bottom_menu"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/buttonHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#000000"
-            app:srcCompat="@drawable/img_2"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:id="@+id/bottomMain"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/buttonNews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bottom_menu_main_page_pressed" />
 
+            <TextView
+                android:id="@+id/textView13"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#9789FF"
+                android:paddingBottom="5dp"
+                android:text="Главная" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/bottomActions"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#000000"
-            app:srcCompat="@drawable/img_1"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/buttonStock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#000000"
-            app:srcCompat="@drawable/img"
-            tools:ignore="SpeakableTextPresentCheck" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bottom_menu_actions" />
 
-        <ImageButton
-            android:id="@+id/buttonPortfolio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="Акции" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#000000"
-            app:srcCompat="@drawable/img_3"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:id="@+id/bottomNews"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bottom_menu_news" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="Новости" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/bottomPortfolio"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bottom_menu_portfolio" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="Портфель" />
+        </LinearLayout>
     </LinearLayout>
 
     <TextView

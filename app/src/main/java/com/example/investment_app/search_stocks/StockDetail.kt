@@ -53,7 +53,6 @@ class StockDetail : AppCompatActivity() {
         companyPrice = findViewById(R.id.StockPrice_txt)
         profitValue = findViewById(R.id.ProfitVolume_txt)
         stockChangeInf()
-
     }
 
 

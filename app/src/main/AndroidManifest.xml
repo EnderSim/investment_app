@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.investment_app">
-<!--    Интернет конектится, пыхтит приложенька-->
+    <!-- Интернет конектится, пыхтит приложенька -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,18 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Investment_app">
         <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InfoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_info"
+            android:theme="@style/Theme.Investment_app.NoActionBar" />
+        <activity
             android:name=".LearnActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PortfolioActivity"
             android:exported="false" />
         <activity
             android:name=".MyAccounts"
-            android:exported="false" />
-        <activity
-            android:name=".SearchActivity"
-            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
@@ -42,6 +47,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
