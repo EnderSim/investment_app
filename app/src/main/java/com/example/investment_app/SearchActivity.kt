@@ -28,8 +28,6 @@ class SearchActivity : AppCompatActivity() {
         val bottomNews = findViewById<LinearLayout>(R.id.search_bottom_news)
         val bottomPortfolio = findViewById<LinearLayout>(R.id.search_bottom_portfolio)
 
-        bottomActions.alpha = 0.5f
-
         bottomMain.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
