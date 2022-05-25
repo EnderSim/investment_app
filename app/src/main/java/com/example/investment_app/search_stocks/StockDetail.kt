@@ -37,7 +37,6 @@ class StockDetail : AppCompatActivity() {
         var dailyValueInf = AlorAPI.getDailyVolume(token.toString()).toString()
         companyName?.setText(shortNameComp.toString())
         companyFullName?.setText("Полное название: " + fullNameComp.toString())
-
         if (AlorAPI.getDailyVolume(token.toString()) == 0){
             dailyValueInf = "Нет информации"
         }
