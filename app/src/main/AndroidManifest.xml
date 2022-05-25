@@ -17,6 +17,9 @@
             android:name=".PortfolioActivity"
             android:exported="false" />
         <activity
+            android:name=".MyAccounts"
+            android:exported="false" />
+        <activity
             android:name=".SearchActivity"
             android:exported="false" />
         <activity
