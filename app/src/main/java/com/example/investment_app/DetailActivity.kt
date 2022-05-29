@@ -110,7 +110,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     fun onClickGoHome(view: View){
-        val intent = Intent(this,DetailActivity::class.java)
+        val intent = Intent(this,NewsActivity::class.java)
         startActivity(intent)
     }
 
