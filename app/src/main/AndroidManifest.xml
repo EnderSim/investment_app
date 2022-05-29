@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.investment_app">
-    <!-- Интернет конектится, пыхтит приложенька -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
-    <uses-permission android:name="android.permission.INTERNET" />
+
+
 
     <application
         android:allowBackup="true"
@@ -13,6 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Investment_app">
+        <activity
+            android:name=".SavedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
         <activity
             android:name=".CreateAccountActivity"
             android:exported="false"
@@ -68,6 +77,9 @@
             android:exported="false" />
         <activity
             android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".search_stocks.StockDetail"
             android:exported="false" />
         <activity
             android:name=".search_stocks.StockDetail"

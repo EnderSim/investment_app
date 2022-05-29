@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".DetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/news_text2"
+            android:layout_width="173dp"
+            android:layout_height="51dp"
+            android:text="@string/news"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:background="@drawable/button_border"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.088"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.051" />
+
+        <Button
+            android:id="@+id/button_last2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_border"
+            android:onClick="onClickGoHome"
+            android:text="@string/last"
+            android:textColor="#000000"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.134"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/news_text2"
+            app:layout_constraintVertical_bias="0.07" />
+
+        <Button
+            android:id="@+id/button_saved2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_border"
+            android:onClick="onClickGoSaved"
+            android:text="@string/saved"
+            android:textColor="#000000"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/news_text2"
+            app:layout_constraintVertical_bias="0.07" />
+
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="376dp"
+            android:layout_height="wrap_content"
+            android:text="@string/detail"
+            android:textColor="#000000"
+            android:backgroundTint="#FFFFFF"
+            android:textColorHint="#000000"
+            android:textSize="17sp"
+            android:background="@drawable/button_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textnew"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <TextView
+            android:id="@+id/src"
+            android:layout_width="344dp"
+            android:layout_height="27dp"
+            android:text="@string/src"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.268"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="244dp"
+            android:layout_height="77dp"
+            android:text="@string/savebt"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:background="@drawable/button_border"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.095"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textdata"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <TextView
+            android:id="@+id/textnew"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:text="@string/textnew"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.583"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_last2"
+            app:layout_constraintVertical_bias="0.33" />
+
+        <TextView
+            android:id="@+id/textdata"
+            android:layout_width="216dp"
+            android:layout_height="32dp"
+            android:text="@string/textdata"
+            android:textColor="#000000"
+            android:background="@drawable/button_border"
+            android:backgroundTint="#FFFFFF"
+            android:textColorHint="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.092"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/src"
+            app:layout_constraintVertical_bias="0.07" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
