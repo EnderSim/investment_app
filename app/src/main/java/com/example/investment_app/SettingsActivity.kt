@@ -12,9 +12,13 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivitySettingsBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_settings)
+        setContentView(bindingClass.root)
+        bindingClass.backButton.setOnClickListener{
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
         bindingClass.buttonnotif.setOnClickListener {
-            object {
+             object {
                 val NOTIFICATION_ID = 101
                 val CHANNEL_ID = "channelID"
             }
