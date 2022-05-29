@@ -4,75 +4,339 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E5E5E5"
     tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/buttonSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="307dp"
-        android:text="Поиск"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonNews"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNews"
-        app:layout_constraintVertical_bias="0.100000024" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Основное меню"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="2dp"
+        android:fontFamily="@font/inter"
+        android:text="Здесь вы можете ознакомиться с нашим приложением"
+        android:textColor="#525254"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBalance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="Главная страница"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/buttonInfo"
+        android:layout_width="148dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#8377DB"
+        android:fontFamily="@font/inter"
+        android:text="Что есть в приложении?"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonBalance"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/buttonBalance"
+        android:layout_width="148dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#8377DB"
+        android:fontFamily="@font/inter"
+        android:gravity="top"
+        android:text="Ваш баланс"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/buttonWell"
+        app:layout_constraintEnd_toStartOf="@+id/buttonInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/buttonWell"
+        android:layout_width="148dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#8377DB"
+        android:fontFamily="@font/inter"
+        android:gravity="top"
+        android:text="Курсы валют"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonNotes"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBalance" />
+
+    <Button
+        android:id="@+id/buttonTest"
+        android:layout_width="148dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#8377DB"
+        android:fontFamily="@font/inter"
+        android:text="Узнай насколько ты крутой инвестор"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonNotes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonWell"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInfo" />
+
+    <Button
+        android:id="@+id/ButtonNotes"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:backgroundTint="#8377DB"
+        android:padding="15dp"
+        android:fontFamily="@font/inter"
+        android:text="Мои заметки"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonWell" />
+
+    <Button
+        android:id="@+id/buttonCalendar"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:backgroundTint="#8377DB"
+        android:fontFamily="@font/inter"
+        android:padding="15dp"
+        android:text="Календарь инвестора"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/buttonProCoach"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonNotes" />
+
+    <Button
+        android:id="@+id/buttonProCoach"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="#8377DB"
+        android:fontFamily="@font/inter"
+        android:padding="15dp"
+        android:text="Профессиональное обучение"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalendar" />
+
+    <ImageButton
+        android:id="@+id/buttonSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#E5E5E5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_5"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
         android:id="@+id/buttonProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="286dp"
-        android:layout_marginBottom="12dp"
-        android:text="Профиль"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="10dp"
+        android:background="#E5E5E5"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSettings"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.108" />
+        app:srcCompat="@drawable/img_4"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <Button
-        android:id="@+id/buttonPortfolio"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="116dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="278dp"
-        android:text="Портфель"
+        android:layout_marginTop="20dp"
+        android:background="#E5E5E5"
+        android:elevation="2dp"
+        android:text="Нет данных"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonBalance"
+        app:layout_constraintEnd_toEndOf="@+id/buttonBalance"
+        app:layout_constraintStart_toStartOf="@+id/buttonBalance"
+        app:layout_constraintTop_toTopOf="@+id/buttonBalance" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonProfile"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProfile"
-        app:layout_constraintVertical_bias="0.100000024" />
+        android:background="@drawable/learn_bottom_menu"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/buttonNews"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/bottomMain"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bottom_menu_main_page_pressed" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#9789FF"
+                android:paddingBottom="5dp"
+                android:text="Главная" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/bottomActions"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bottom_menu_actions" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="Акции" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/bottomNews"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bottom_menu_news" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="Новости" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/bottomPortfolio"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bottom_menu_portfolio" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="Портфель" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/USDView"
+        android:layout_width="116dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="289dp"
-        android:layout_marginBottom="22dp"
-        android:text="Новости"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonPortfolio"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPortfolio"
-        app:layout_constraintVertical_bias="0.100000024" />
+        android:layout_marginBottom="15dp"
+        android:background="#E5E5E5"
+        android:elevation="2dp"
+        android:text="Нет данных"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonWell"
+        app:layout_constraintEnd_toEndOf="@+id/buttonWell"
+        app:layout_constraintStart_toStartOf="@+id/buttonWell"
+        app:layout_constraintTop_toTopOf="@+id/buttonWell" />
+
+    <TextView
+        android:id="@+id/EURView"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="#E5E5E5"
+        android:elevation="2dp"
+        android:text="Нет данных"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonWell"
+        app:layout_constraintEnd_toEndOf="@+id/buttonWell"
+        app:layout_constraintStart_toStartOf="@+id/buttonWell"
+        app:layout_constraintTop_toTopOf="@+id/buttonWell"
+        app:layout_constraintVertical_bias="0.925" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
