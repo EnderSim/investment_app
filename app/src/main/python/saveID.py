@@ -1,10 +1,9 @@
 from os.path import dirname, join
 
-def getsaved(user_id):
+def savenewid(user_id):
     filename = join(dirname(__file__),"saved.txt")
 
     with open(filename,"r+") as f:
-        
         if f.readline() == "start":
             with open(filename,"w") as file:
                 file.write(user_id + "\n")
@@ -21,7 +20,7 @@ def getsaved(user_id):
                             
                 return str(len(saved_news))
                 
-
+print(savenewid("211-171"))
 
 
 

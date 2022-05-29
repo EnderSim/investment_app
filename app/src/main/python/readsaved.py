@@ -5,12 +5,12 @@ def readsaved():
 
     with open(filename,"r+") as f1:
         user_id1 = f1.readline()
-        saved = f1.readline()
-        saved_news = saved.split("sep")
+        saved = f1.readline().replace("sepsep","sep")
                             
-        return saved_news
+        return str(saved)
 
-print(readsaved())
+
+
 
 
 

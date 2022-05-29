@@ -18,4 +18,7 @@
     <string name="src">TextView</string>
     <string name="data">TextView</string>
     <string name="new_4">new4</string>
+    <string name="savebt">Добавить в избранное</string>
+    <string name="textnew">TextNew</string>
+    <string name="textdata">textdata</string>
 </resources>

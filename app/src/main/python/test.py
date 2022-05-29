@@ -20,7 +20,7 @@ def news():
             curr_index = x.find(news)
             working_text_new = x[curr_index:curr_index+300]
             sym = working_text_new.find(":")
-
+            
             return news
             #return news, working_text_new[sym-2:sym+3] #возвращение текста новости и даты
 
@@ -31,18 +31,18 @@ def news():
     k = 0
     while len(result) <= 15 and time.monotonic()-t < 2.5:
         new = get_new(newes[k:k+500])       
-        if new is not None:
+        if new is not None and len(new) >= 3:
             new = new[21:-17]
             new = new.replace(",",".")
             new = new.replace("\xa0"," ")
             result.append(new)
-            print(new)
+            #print(new)
         k += 510
         
     return str(result)[1:-1]
 
 
-news()
+#print(len(news().split(",")))
 
 
         

@@ -2,15 +2,18 @@ import requests,datetime
 from bs4 import BeautifulSoup
 from requests_html import HTMLSession
 import test,test1
+from os.path import dirname, join
+
 
 def getsrc(x):
     x = int(x)
     new = test.news().split(",")
     now = datetime.datetime.now()
-    with open("src.txt","r+") as fil:
+    filename = join(dirname(__file__),"src.txt")
+    with open(filename,"r+") as fil:
         res = fil.readline()
         if res == "start":
-            with open("src.txt","w") as file:
+            with open(filename,"w") as file:
                 file.write(str(now.year) + " ")
                 file.write(str(now.month) + " ")
                 file.write(str(now.day) + " ")
@@ -31,7 +34,7 @@ def getsrc(x):
     if time_src[0] != time[0] or time_src[1] != time[1] or time_src[2] != time[2] or abs(int(time_src[3])-int(time[3])) >= 24 or motion == True:
         #news = dict() #news dictionary new - source
         sources = test1.sources()
-        with open("src.txt","w") as f1:
+        with open(filename,"w") as f1:
             f1.write(str(now.year) + " ")
             f1.write(str(now.month) + " ")
             f1.write(str(now.day) + " ")
@@ -42,20 +45,19 @@ def getsrc(x):
                 
         return str(sources)[1:-1]
     else:
-        with open("src.txt","r+") as f2:
+        with open(filename,"r+") as f2:
             date = f2.readline()
-            srcs = f2.readline()
-           
+            srcs = f2.readline().split("%")
+            result = srcs[x]
             
             
-            return srcs.split("%")[x]
+            return result
             
             
-            
+print(getsrc(0))            
             
 
             
-#print(getsrc())
 
 
         
