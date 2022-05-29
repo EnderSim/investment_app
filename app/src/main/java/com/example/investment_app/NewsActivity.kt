@@ -10,6 +10,8 @@ import com.chaquo.python.Python
 import com.chaquo.python.android.AndroidPlatform
 import java.util.*
 import android.provider.Settings.System
+import android.widget.LinearLayout
+import com.example.investment_app.databinding.ActivityNewsBinding
 
 
 class NewsActivity : AppCompatActivity() {
@@ -28,8 +30,29 @@ class NewsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_news)
 
+        setContentView(R.layout.activity_news)
+        val bottomMain = findViewById<LinearLayout>(R.id.bottomMain)
+        val bottomActions = findViewById<LinearLayout>(R.id.bottomActions)
+        val bottomNews = findViewById<LinearLayout>(R.id.bottomNews)
+        val bottomPortfolio = findViewById<LinearLayout>(R.id.bottomPortfolio)
+
+        bottomMain.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        bottomNews.setOnClickListener {
+            val intent = Intent(this, NewsActivity::class.java)
+            startActivity(intent)
+        }
+        bottomPortfolio.setOnClickListener {
+            val intent = Intent(this, PortfolioActivity::class.java)
+            startActivity(intent)
+        }
+        bottomActions.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
 
         new1 = findViewById(R.id.new_1)
         new2 = findViewById(R.id.new_2)

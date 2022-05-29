@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.example.investment_app.R
+import com.example.investment_app.*
 import com.example.investment_app.network.AlorAPI
 import kotlin.math.log
 
@@ -22,10 +23,7 @@ class StockDetail : AppCompatActivity() {
         private var companyPrice: TextView? = null
         private var profitValue: TextView? = null
         const val STOCK_NAME = "STOCK_NAME"
-
-
     }
-
 
 
     fun stockChangeInf(){
@@ -53,6 +51,27 @@ class StockDetail : AppCompatActivity() {
         companyPrice = findViewById(R.id.StockPrice_txt)
         profitValue = findViewById(R.id.ProfitVolume_txt)
         stockChangeInf()
+        val bottomMain = findViewById<LinearLayout>(R.id.search_bottom_main)
+        val bottomActions = findViewById<LinearLayout>(R.id.search_bottom_actions)
+        val bottomNews = findViewById<LinearLayout>(R.id.search_bottom_news)
+        val bottomPortfolio = findViewById<LinearLayout>(R.id.search_bottom_portfolio)
+
+        bottomMain.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        bottomNews.setOnClickListener {
+            val intent = Intent(this, NewsActivity::class.java)
+            startActivity(intent)
+        }
+        bottomPortfolio.setOnClickListener {
+            val intent = Intent(this, PortfolioActivity::class.java)
+            startActivity(intent)
+        }
+        bottomActions.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 

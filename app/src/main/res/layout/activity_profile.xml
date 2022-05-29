@@ -27,4 +27,127 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <LinearLayout
+        android:id="@+id/bottom_menu_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/bottom_menu_bg"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    <LinearLayout
+        android:id="@+id/buttonProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/bottom_menu_main_page" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="Главная"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomActions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/bottom_menu_actions" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="Акции"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomNews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/bottom_menu_news" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="Новости"
+            android:textColor="@color/white" />
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/bottomPortfolio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/bottom_menu_portfolio" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="Портфель"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

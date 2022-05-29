@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="150dp"
@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/portfolio_user" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/buttonSettings"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/search_bottom_main"
+            android:id="@+id/buttonProfile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -86,7 +86,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/search_bottom_actions"
+            android:id="@+id/bottomActions"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -114,7 +114,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/search_bottom_news"
+            android:id="@+id/bottomNews"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -142,7 +142,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/search_bottom_portfolio"
+            android:id="@+id/bottomPortfolio"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -178,7 +178,7 @@
         android:background="@drawable/my_accounts_info_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <TextView
             android:id="@+id/textView3"
@@ -377,7 +377,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/portfolio_stock_bg">
-
 
                 <ImageView
                     android:id="@+id/imageView15"

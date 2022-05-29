@@ -106,13 +106,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/bottom_menu_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="@drawable/learn_bottom_menu"
+        android:background="@drawable/bottom_menu_bg"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

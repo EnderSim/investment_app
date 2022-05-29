@@ -14,7 +14,7 @@ class SettingsActivity : AppCompatActivity() {
         bindingClass = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
         bindingClass.backButton.setOnClickListener{
-            val intent = Intent(this, ProfileActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         bindingClass.buttonnotif.setOnClickListener {

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".PortfolioActivity">
 
     <TextView
@@ -32,7 +33,7 @@
         app:srcCompat="@drawable/portfolio_user" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/buttonSettings"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
@@ -170,9 +171,6 @@
             android:textColor="@color/black" />
     </LinearLayout>
 
-
-
-
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
@@ -234,7 +232,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/search_bottom_main"
+            android:id="@+id/buttonProfile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -263,7 +261,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/search_bottom_actions"
+            android:id="@+id/bottomActions"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -291,7 +289,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/search_bottom_news"
+            android:id="@+id/bottomNews"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -319,7 +317,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/search_bottom_portfolio"
+            android:id="@+id/bottomPortfolio"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

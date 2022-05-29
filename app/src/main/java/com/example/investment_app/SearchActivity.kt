@@ -22,7 +22,6 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
-
         val bottomMain = findViewById<LinearLayout>(R.id.search_bottom_main)
         val bottomActions = findViewById<LinearLayout>(R.id.search_bottom_actions)
         val bottomNews = findViewById<LinearLayout>(R.id.search_bottom_news)
@@ -38,6 +37,10 @@ class SearchActivity : AppCompatActivity() {
         }
         bottomPortfolio.setOnClickListener {
             val intent = Intent(this, PortfolioActivity::class.java)
+            startActivity(intent)
+        }
+        bottomActions.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }
 

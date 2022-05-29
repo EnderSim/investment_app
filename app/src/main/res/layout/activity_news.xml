@@ -1,330 +1,360 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".NewsActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/news"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="150dp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSettings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/portfolio_user" />
+
+    <ImageView
+        android:id="@+id/buttonSettings"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/portfolio_settings" />
+
+    <Button
+        android:id="@+id/button_last"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:padding="40dp"
-        tools:context=".NewsActivity">
+        android:text="@string/last"
+        android:textColor="#000000"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
 
-        <TextView
-            android:id="@+id/news_text"
-            android:layout_width="173dp"
-            android:layout_height="51dp"
-            android:text="@string/news"
-            android:textColor="#000000"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <Button
+        android:id="@+id/button_saved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:backgroundTint="#D3CACA"
+        android:onClick="onClickGoSaved"
+        android:text="@string/saved"
+        android:textColor="#000000"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
 
-        <Button
-            android:id="@+id/button_last"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:text="@string/last"
-            android:textColor="#000000"
-            app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.127"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.11" />
-
-        <Button
-            android:id="@+id/button_saved"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:backgroundTint="#D3CACA"
-            android:onClick="onClickGoSaved"
-            android:text="@string/saved"
-            android:textColor="#000000"
-            app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.11" />
-
-        <Button
-            android:id="@+id/new_1"
-            android:layout_width="350dp"
-            android:layout_height="75dp"
-            android:background="@drawable/button_border"
-            android:onClick="onClickGoNew1"
-            android:text="new1"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.131"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.21" />
-
-        <Button
-            android:id="@+id/new_2"
-            android:layout_width="350dp"
-            android:layout_height="75dp"
-            android:background="@drawable/button_border"
-            android:onClick="onClickGoNew2"
-            android:text="new2"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.131"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_1"
-            app:layout_constraintVertical_bias="0.05" />
-
-        <Button
-            android:id="@+id/new_3"
-            android:layout_width="350dp"
-            android:layout_height="75dp"
-            android:background="@drawable/button_border"
-            android:onClick="onClickGoNew3"
-            android:text="new3"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:backgroundTint='#FFFFFF'
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.131"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_2"
-            app:layout_constraintVertical_bias="0.05" />
-
-        <Button
-            android:id="@+id/new_4"
-            android:layout_width="350dp"
-            android:layout_height="75dp"
-            android:background="@drawable/button_border"
-            android:onClick="onClickGoNew4"
-            android:text="new4"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:backgroundTint='#FFFFFF'
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.131"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_3"
-            app:layout_constraintVertical_bias="0.05"
-            tools:ignore="DuplicateClickableBoundsCheck" />
-
-        <Button
-            android:id="@+id/new_5"
-            android:layout_width="350dp"
-            android:layout_height="75dp"
-            android:background="@drawable/button_border"
-            android:onClick="onClickGoNew5"
-            android:text="new5"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.038"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_4"
-            app:layout_constraintVertical_bias="0.05" />
-
-        <Button
-            android:id="@+id/new_6"
-            android:layout_width="350dp"
-            android:layout_height="75dp"
-            android:background="@drawable/button_border"
-            android:onClick="onClickGoNew6"
-            android:text="new6"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_5"
-            app:layout_constraintVertical_bias="0.05"
-            tools:ignore="DuplicateClickableBoundsCheck" />
-
-        <Button
-            android:id="@+id/new_7"
-            android:layout_width="350dp"
-            android:layout_height="75dp"
-            android:background="@drawable/button_border"
-            android:onClick="onClickGoNew7"
-            android:text="new7"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.016"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_6"
-            app:layout_constraintVertical_bias="0.05" />
-
-        <Button
-            android:id="@+id/new_8"
-            android:layout_width="350dp"
-            android:layout_height="75dp"
-            android:background="#D3CACA"
-            android:onClick="onClickGoNew8"
-            android:text="new8"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.262"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_7"
-            app:layout_constraintVertical_bias="0.05" />
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_menu_ll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_last"
+        app:layout_constraintVertical_bias="0.92">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="1dp"
-            android:background="@drawable/learn_bottom_menu"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/search_bottom_main"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/bottom_menu_main_page" />
-
-                <TextView
-                    android:id="@+id/textView13"
+                <Button
+                    android:id="@+id/new_1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:paddingBottom="5dp"
-                    android:text="Главная"
-                    android:textColor="#9789FF" />
+                    android:layout_height="75dp"
+                    android:background="@drawable/button_border"
+                    android:onClick="onClickGoNew1"
+                    android:text="new1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    app:backgroundTint="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.131"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/search_bottom_actions"
+            <Button
+                android:id="@+id/new_2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_height="75dp"
+                android:background="@drawable/button_border"
+                android:onClick="onClickGoNew2"
+                android:text="new2"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:backgroundTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.131"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_1"
+                app:layout_constraintVertical_bias="0.05" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/bottom_menu_actions" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingBottom="5dp"
-                    android:text="Акции"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/search_bottom_news"
+            <Button
+                android:id="@+id/new_3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_height="75dp"
+                android:background="@drawable/button_border"
+                android:onClick="onClickGoNew3"
+                android:text="new3"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:backgroundTint='#FFFFFF'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.131"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_2"
+                app:layout_constraintVertical_bias="0.05" />
 
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/bottom_menu_news" />
-
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingBottom="5dp"
-                    android:text="Новости"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/search_bottom_portfolio"
+            <Button
+                android:id="@+id/new_4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="75dp"
+                android:background="@drawable/button_border"
+                android:onClick="onClickGoNew4"
+                android:text="new4"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:backgroundTint='#FFFFFF'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.131"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_3"
+                app:layout_constraintVertical_bias="0.05"
+                tools:ignore="DuplicateClickableBoundsCheck" />
+
+            <Button
+                android:id="@+id/new_5"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="@drawable/button_border"
+                android:onClick="onClickGoNew5"
+                android:text="new5"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:backgroundTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.038"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_4"
+                app:layout_constraintVertical_bias="0.05" />
+
+            <Button
+                android:id="@+id/new_6"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="@drawable/button_border"
+                android:onClick="onClickGoNew6"
+                android:text="new6"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:backgroundTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_5"
+                app:layout_constraintVertical_bias="0.05"
+                tools:ignore="DuplicateClickableBoundsCheck" />
+
+            <Button
+                android:id="@+id/new_7"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="@drawable/button_border"
+                android:onClick="onClickGoNew7"
+                android:text="new7"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:backgroundTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_6"
+                app:layout_constraintVertical_bias="0.05" />
+
+            <Button
+                android:id="@+id/new_8"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="#D3CACA"
+                android:onClick="onClickGoNew8"
+                android:text="new8"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:backgroundTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.262"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_7"
+                app:layout_constraintVertical_bias="0.05" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_menu_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/bottom_menu_bg"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/bottomMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/bottom_menu_main_page" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/bottom_menu_portfolio" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingBottom="5dp"
-                    android:text="Портфель"
-                    android:textColor="@color/white" />
-            </LinearLayout>
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="Главная"
+                android:textColor="@color/white" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/bottomActions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/bottom_menu_actions" />
 
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="Акции"
+                android:textColor="@color/white" />
+        </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+        <LinearLayout
+            android:id="@+id/bottomNews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/bottom_menu_news_pressed" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="Новости"
+                android:textColor="#9789FF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomPortfolio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/bottom_menu_portfolio" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="Портфель"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

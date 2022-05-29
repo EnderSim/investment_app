@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
-        bindingClass.buttonProfile.setOnClickListener {
+        bindingClass.imageView.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }

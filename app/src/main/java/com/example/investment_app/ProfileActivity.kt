@@ -20,5 +20,22 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        bindingClass.buttonProfile.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.bottomNews.setOnClickListener {
+            val intent = Intent(this, NewsActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.bottomPortfolio.setOnClickListener {
+            val intent = Intent(this, PortfolioActivity::class.java)
+            startActivity(intent)
+        }
+
+        bindingClass.bottomActions.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

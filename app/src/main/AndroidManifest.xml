@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.investment_app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-
-
 
     <application
         android:allowBackup="true"
@@ -15,7 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Investment_app">
+        android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
             android:name=".SavedActivity"
             android:exported="false" />
@@ -49,8 +45,8 @@
         <activity
             android:name=".EntranceActivity"
             android:exported="true"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+        <activity
             android:name=".SearchActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -72,9 +68,6 @@
             android:exported="false" />
         <activity
             android:name=".SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".search_stocks.StockDetail"
             android:exported="false" />
         <activity
             android:name=".search_stocks.StockDetail"
