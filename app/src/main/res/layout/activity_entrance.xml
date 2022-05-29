@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EntranceActivity">
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="292dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="550dp"
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/interbold"
+        android:text="@string/registerButton"
+        android:textAllCaps="false"
+        android:textColor="#FCFCFC"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="292dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="660dp"
+        android:background="@drawable/button_bg2"
+        android:fontFamily="@font/interbold"
+        android:text="@string/loginButton"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="236dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="75dp"
+        android:fontFamily="@font/interextrabold"
+        android:gravity="center_horizontal"
+        android:text="@string/investment_teaching"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="238dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/inter"
+        android:gravity="center"
+        android:text="@string/newbies"
+        android:textColor="#525254"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="340dp"
+        android:layout_height="315dp"
+        android:layout_marginBottom="390dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
