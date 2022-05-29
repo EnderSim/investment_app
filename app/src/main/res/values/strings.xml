@@ -16,7 +16,6 @@
     <string name="registration_continue">Продолжить</string>
     <string name="passport">Паспортные данные</string>
     <string name="passport_data">Серия и номер</string>
-    <string name="app_name">Investment_app</string>
     <string name="title_activity_info">InfoActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
