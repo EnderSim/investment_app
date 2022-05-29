@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var buttonLogin: Button
     private lateinit var buttonBack: ImageButton
-    private lateinit var textViewSignUp: TextView
+    // private lateinit var textViewSignUp: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,17 +30,17 @@ class LoginActivity : AppCompatActivity() {
         textInputEditTextPassword = findViewById(R.id.password_text)
 
         buttonLogin = findViewById(R.id.buttonContinue3)
-        textViewSignUp = findViewById(R.id.forgot)
+        // textViewSignUp = findViewById(R.id.forgot)
         buttonBack = findViewById(R.id.buttonBack)
 
         buttonBack.setOnClickListener {
             finish()
         }
 
-        textViewSignUp.setOnClickListener {
-            val intent = Intent(applicationContext, PasswordResetActivity::class.java)
-            startActivity(intent)
-        }
+        // textViewSignUp.setOnClickListener {
+        //     val intent = Intent(applicationContext, PasswordResetActivity::class.java)
+        //     startActivity(intent)
+        // }
 
 
         buttonLogin.setOnClickListener {

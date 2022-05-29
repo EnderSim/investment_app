@@ -55,11 +55,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".InfoActivity"
-            android:exported="false"
-            android:label="@string/title_activity_info"
-            android:theme="@style/Theme.Investment_app.NoActionBar" />
-        <activity
             android:name=".LearnActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
